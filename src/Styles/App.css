@@ -1,0 +1,149 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body{
+  background-color: rgb(214, 214, 214);
+}
+:root{
+  --dark-grey: #6e6e6e;
+  --light-grey: #ebebeb;
+  --odd-weather-widget-row-background: #f7f7f7;
+  --blue: #3e5b9d;
+  --red: #e82e00;
+  --orange: #e78f09;
+  --green: #8bba0a;
+  --container-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, .8);
+  --weather-today-left-border: 3px solid rgb(42, 42, 192);
+}
+.app {
+  background-color: rgb(214, 214, 214);
+  display: grid;
+  justify-content: center;
+}
+.main-container{
+  display: grid;
+  grid-column-gap: 11px;
+  grid-row-gap: 15px;
+  grid-template-columns: auto 1fr; 
+  padding: 20px;
+  padding-left: 2rem;
+  padding-top: 70px;
+  background-color: rgb(214, 214, 214);
+}
+@media (max-width: 800px){ 
+  .main-container{
+    grid-template-columns: auto;
+  }
+}
+.map{
+  height: 750px;
+  width: 400px;
+  border: solid 2px white;
+  grid-row: span 2;
+  box-shadow: var(--container-box-shadow);
+}
+.location-marker{
+  cursor: pointer;
+}
+.daily-weather-box{
+  background: rgb(206, 197, 197);
+}
+.blue-temperature{
+  background-color: var(--blue);
+}
+.green-temperature{
+  background-color: var(--green);
+}
+.orange-temperature{
+  background-color: var(--orange);
+}
+.red-temperature{
+  background-color: var(--red);
+}
+.weather-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: auto; 
+  box-shadow: var(--container-box-shadow);
+}
+.single-weather-container {
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
+  padding-top: 22px;
+  padding-left: 18px;
+  padding-right: 18px;
+  padding-bottom: 22px;
+  background-color: var(--light-grey);
+}
+.single-weather-container:nth-child(odd){
+  background-color: var(--odd-weather-widget-row-background)
+}
+.weather-container h3 {
+  color: var(--dark-grey);
+  text-align: center;
+  padding: 7px;
+  background-color: var(--odd-weather-widget-row-background);
+}
+.temperatures {
+  display: flex;
+  height: min-content;
+  gap: 0.1rem;
+}
+.temperatures p {
+  width: 50px;
+  font-size: 1rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  padding: 5px;
+  color: white;
+}
+.betshop-info-box{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: space-between;
+  grid-row: span 2;
+  gap: 0.5rem;
+}
+.betshop-info-box-container{
+  display: flex;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: rgb(248, 248, 248);
+  box-shadow: var(--container-box-shadow);
+  align-items: flex-start;
+}
+.clouds-span{
+  font-weight: bold;
+}
+.date-time{
+  font-weight: bold;
+}
+.betshop-info-box-container address{
+  margin-left: 25px;
+  margin-top: 2px;
+}
+.betshop-info-box-container address h4{
+  display: flex;
+  align-items: center;
+}
+.betshop-hours{
+  margin-top: 10px;
+}
+.betshop-hours p{
+  display: flex;
+  align-items: center;
+}
+.betshop-info-box-container address .betshop-name{
+  padding-left: 200px;
+}
+.weather-today-left-border{
+  border-left: var(--weather-today-left-border);
+}
